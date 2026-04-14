@@ -1,0 +1,3 @@
+name = "abm-code-distribution-demo"
+main = "src/index.ts"
+compatibility_date = "2026-04-14"
