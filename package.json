@@ -4,6 +4,7 @@
   "private": true,
   "description": "A simple Cloudflare Workers demo",
   "scripts": {
+    "build": "npm run check",
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
     "check": "tsc --noEmit"
