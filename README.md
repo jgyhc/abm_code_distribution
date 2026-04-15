@@ -83,3 +83,6 @@ JWAFHP6RRN4F,,https://apps.apple.com/redeem?code=JWAFHP6RRN4F&ctx=apps
 - `GET /app/:appId`：用户领取页（按应用分发）
 - `POST /api/admin/abm-codes`：旧 JSON 导入接口（兼容，写入 `legacy-default` 应用）
 - `GET /health`：健康检查
+
+
+

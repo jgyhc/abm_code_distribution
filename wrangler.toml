@@ -1,3 +1,9 @@
 name = "shrill-term-5445"
 main = "src/index.ts"
 compatibility_date = "2026-04-14"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "abm_redeem_db"
+database_id = "316121d7-c568-4fbc-b244-d5a972a257c9"
+
