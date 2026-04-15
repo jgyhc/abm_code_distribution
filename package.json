@@ -7,11 +7,15 @@
     "build": "npm run check",
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "import:abm": "node ./scripts/import-abm-codes.mjs"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20260410.0",
     "typescript": "^5.8.3",
     "wrangler": "^4.11.0"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
   }
 }
