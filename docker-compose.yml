@@ -1,0 +1,17 @@
+services:
+  worker:
+    # 从当前项目根目录构建镜像。
+    build: .
+    container_name: abm-worker-local
+    ports:
+      # 宿主机 8787 映射到容器 8787，便于本地浏览器访问。
+      - "8787:8787"
+    volumes:
+      # 挂载源码，方便你本地修改后容器内立即生效。
+      - .:/app
+      # 使用匿名卷隔离 node_modules，避免被宿主机覆盖导致依赖异常。
+      - /app/node_modules
+    # 重要步骤：
+    # 1) 首次启动（或卷为空）时自动安装依赖，确保 workerd 二进制存在；
+    # 2) 启动 wrangler 本地服务，并监听 0.0.0.0 供宿主机访问。
+    command: sh -c "if [ ! -x node_modules/@cloudflare/workerd-linux-arm64/bin/workerd ]; then npm install; fi && npm run dev -- --ip 0.0.0.0 --port 8787"
